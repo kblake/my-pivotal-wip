@@ -8,7 +8,7 @@ Also included in /bin is a cli app to get your feet wet using the Pivotal Tracke
 
 Libs:
 
-http://sinatrarb.com
+http://www.sinatrarb.com
 
 https://github.com/jsmestad/pivotal-tracker
 
