@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title My Pivotal WIP
+    %link(rel="stylesheet" href="/styles.css")
+    %script{:type => "text/javascript", :src  => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"}
+    %script{:type => "text/javascript", :src  => "js/app.js"}
+  %body
+    %h1 My Pivotal WIP
+    %p
+      Stories in <span class="red reasonablePadding">red</span> are stories you should not have started!!
+    %h3= "Select a project to see your work in progress."
+    %select#projects
+      - @projects.each do |project|
+        %option{:value => project.id}= project.name
+    %img{:src => "images/ajax-loading-spinner-small.gif", :id => "spinner"}
+    #wipConfig= "(WIP is set at: #{settings.wip_story_limit})"
+    #stories.centerbox

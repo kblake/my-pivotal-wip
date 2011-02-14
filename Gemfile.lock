@@ -1,0 +1,40 @@
+GIT
+  remote: git://github.com/sinatra/sinatra.git
+  revision: e16bc71590d3577769551263948a96642a0c83be
+  specs:
+    sinatra (1.2.0.a)
+      rack (~> 1.1)
+      tilt (>= 1.2.2, < 2.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    builder (3.0.0)
+    haml (3.0.25)
+    happymapper (0.3.2)
+      libxml-ruby (~> 1.1.3)
+    json (1.5.1)
+    libxml-ruby (1.1.4)
+    mime-types (1.16)
+    nokogiri (1.4.3.1)
+    pivotal-tracker (0.3.1)
+      builder
+      happymapper (>= 0.3.2)
+      nokogiri (~> 1.4.3.1)
+      rest-client (~> 1.6.0)
+    rack (1.2.1)
+    rerun (0.5.4)
+    rest-client (1.6.1)
+      mime-types (>= 1.16)
+    tilt (1.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  json
+  pivotal-tracker
+  rack (~> 1.1)
+  rerun
+  sinatra!
