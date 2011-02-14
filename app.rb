@@ -21,8 +21,9 @@ end
 
 get '/stories/:project_id' do
   project = PivotalTracker::Project.find(params[:project_id].to_i)
-  # project.stories.all.select(&story_filter("started")).map(&:name).to_json
-  {:wip_limit => settings.wip_story_limit, :stories => project.stories.all.select(&story_filter("unscheduled")).map(&:name) + project.stories.all.select(&story_filter("unscheduled")).map(&:name)}.to_json
+  started = project.stories.all.select(&story_filter("started")).map(&:name)
+  # {:wip_limit => settings.wip_story_limit, :stories => project.stories.all.select(&story_filter("unscheduled")).map(&:name)}.to_json
+  {:wip_limit => settings.wip_story_limit, :stories => started}.to_json
 end
 
 
