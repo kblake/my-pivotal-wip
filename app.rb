@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'bundler'; Bundler.setup
 require 'sinatra'
-require 'sass'
 require 'pivotal-tracker'
 require 'json'
 require settings.root + '/credentials'
@@ -25,8 +24,16 @@ get '/stories/:project_id' do
   {:wip_limit => settings.wip_story_limit, :stories => started}.to_json
 end
 
-private
 
 def story_filter(chosen_state)
   lambda {|story| story.owned_by == settings.member_name && story.current_state == chosen_state}
 end
+
+helpers do
+  def project_options(projects)
+    projects.map do |project|
+      "<option value='#{project.id}'>#{project.name}</option>"
+    end.join
+  end
+end
+

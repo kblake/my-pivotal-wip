@@ -11,8 +11,7 @@
       Stories in <span class="red reasonablePadding">red</span> are stories you should not have started!!
     %h3= "Select a project to see your work in progress."
     %select#projects
-      - @projects.each do |project|
-        %option{:value => project.id}= project.name
+      = project_options(@projects)
     %img{:src => "images/ajax-loading-spinner-small.gif", :id => "spinner"}
     #wipConfig= "(WIP is set at: #{settings.wip_story_limit})"
     #stories.centerbox
