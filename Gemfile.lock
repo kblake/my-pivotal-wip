@@ -10,6 +10,9 @@ GEM
   remote: http://rubygems.org/
   specs:
     builder (3.0.0)
+    flog (2.5.0)
+      ruby_parser (~> 2.0)
+      sexp_processor (~> 3.0)
     haml (3.0.25)
     happymapper (0.3.2)
       libxml-ruby (~> 1.1.3)
@@ -26,12 +29,16 @@ GEM
     rerun (0.5.4)
     rest-client (1.6.1)
       mime-types (>= 1.16)
+    ruby_parser (2.0.5)
+      sexp_processor (~> 3.0)
+    sexp_processor (3.0.5)
     tilt (1.2.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  flog
   haml
   json
   pivotal-tracker

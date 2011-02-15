@@ -26,7 +26,6 @@ get '/stories/:project_id' do
   {:wip_limit => settings.wip_story_limit, :stories => started}.to_json
 end
 
-
 private
 
 def story_filter(chosen_state)
