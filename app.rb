@@ -3,7 +3,7 @@ require 'bundler'; Bundler.setup
 require 'sinatra'
 require 'pivotal-tracker'
 require 'json'
-require settings.root + '/credentials'
+require settings.root + '/settings'
 
 # TODO: add protection against missing file or token
 
