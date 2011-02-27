@@ -4,8 +4,8 @@ require 'sinatra'
 require 'pivotal-tracker'
 require 'json'
 require settings.root + '/settings'
+require settings.root + '/models/wip/pivotal_tracker_proxy'
 
-# TODO: add protection against missing file or token
 
 PivotalTracker::Client.token = settings.token
 
@@ -14,19 +14,15 @@ get '/styles.css' do
 end
 
 get '/' do
-  @projects = PivotalTracker::Project.all
+  @projects = WIP::PivotalTrackerProxy.projects
   haml :index
 end
 
 get '/stories/:project_id' do
-  project = PivotalTracker::Project.find(params[:project_id].to_i)
-  started = project.stories.all.select(&story_filter("started")).map(&:name)
-  {:wip_limit => settings.wip_story_limit, :stories => started}.to_json
-end
-
-
-def story_filter(chosen_state)
-  lambda {|story| story.owned_by == settings.member_name && story.current_state == chosen_state}
+  {
+    :wip_limit => settings.wip_story_limit, 
+    :stories => WIP::PivotalTrackerProxy.stories(params[:project_id], "started")
+  }.to_json
 end
 
 helpers do
