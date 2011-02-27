@@ -1,4 +1,4 @@
-= My Pivotal WIP
+=My Pivotal WIP
 
 A simple little Sinatra app. 
 
