@@ -9,6 +9,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    awesome_print (0.3.2)
     builder (3.0.0)
     capybara (0.4.1.2)
       celerity (>= 0.7.9)
@@ -74,6 +75,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   capybara
   flog
   haml

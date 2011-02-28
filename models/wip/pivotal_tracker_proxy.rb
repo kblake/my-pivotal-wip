@@ -9,6 +9,8 @@ module WIP
         stories_for_project(project_id).by(chosen_state).map(&:name)
       end
 
+      protected
+
       def stories_for_project(project_id)
         @stories = project(project_id).stories.all
         self

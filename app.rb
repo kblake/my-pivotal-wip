@@ -3,6 +3,9 @@ require 'bundler'; Bundler.setup
 require 'sinatra'
 require 'pivotal-tracker'
 require 'json'
+require 'haml'
+require 'sass'
+require 'ap'
 require settings.root + '/settings'
 require settings.root + '/models/wip/pivotal_tracker_proxy'
 
@@ -20,7 +23,7 @@ end
 
 get '/stories/:project_id' do
   {
-    :wip_limit => settings.wip_story_limit, 
+    :wip_limit => settings.wip_story_limit,
     :stories => WIP::PivotalTrackerProxy.stories(params[:project_id], "started")
   }.to_json
 end
