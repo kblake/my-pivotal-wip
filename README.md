@@ -9,6 +9,7 @@ Libs:
 * http://www.sinatrarb.com
 * https://github.com/jsmestad/pivotal-tracker
 * http://jquery.com/
+* https://github.com/JEG2/highline (cli app found in /bin)
 
 ![WIP](https://img.skitch.com/20110214-s58qnqm5qg34qa4jrnf58bh1m.jpg)
 
